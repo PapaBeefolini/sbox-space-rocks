@@ -16,8 +16,7 @@
 				{
 						"name": "spacerocks",
 						"title": "Space Rocks",
-						"description": "",
-						"icon": "https://hackaday.com/wp-content/uploads/2011/02/screenshot-9.png"
+						"description": "Shitty clone of Asteroids in s&box",
 				}
 		]
 }
