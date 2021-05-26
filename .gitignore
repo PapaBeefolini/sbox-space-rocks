@@ -1,0 +1,9 @@
+.codegen/
+obj/
+code/accesslist.txt
+Properties
+codegen-*
+asteroids.csproj
+.intermediate
+*bakeresourcecache*
+tools_*_*.bin

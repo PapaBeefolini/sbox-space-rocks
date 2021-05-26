@@ -1,0 +1,23 @@
+{
+		"name": "Space Rocks",
+		"version": "1.0",
+		"sharedassets": "*.*",
+		
+		"depends": 
+		[
+			"base",
+		],
+
+		//
+		// Addons can contain multiple addons, describe them here
+		//
+		"gamemodes":
+		[
+				{
+						"name": "spacerocks",
+						"title": "Space Rocks",
+						"description": "",
+						"icon": "https://hackaday.com/wp-content/uploads/2011/02/screenshot-9.png"
+				}
+		]
+}

@@ -1,0 +1,15 @@
+Hud {
+	position: absolute;
+	left: 100px;
+	top: 36px;
+	height: 80px;
+	align-items: flex-start;
+	display: block;
+	flex-direction: column;
+
+	.text {
+		font-family: VCR_OSD_MONO_1.001;
+		font-size: 32px;
+		margin-bottom: 32px;
+	}
+}
