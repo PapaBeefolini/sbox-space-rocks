@@ -2,7 +2,7 @@
 
 namespace SpaceRocks
 {
-	public class ShipCamera : Camera
+	public class ShipCamera : CameraMode
 	{
 		float distance = 2500;
 
@@ -11,8 +11,8 @@ namespace SpaceRocks
 			Entity pawn = Local.Pawn;
 			if ( pawn == null ) return;
 
-			Pos = Vector3.Up * distance;
-			Rot = Rotation.From( 90, 0, 0 );
+			Position = Vector3.Up * distance;
+			Rotation = Rotation.From( 90, 0, 0 );
 
 			FieldOfView = 90;
 

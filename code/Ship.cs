@@ -33,7 +33,7 @@ namespace SpaceRocks
 			PhysicsBody.AngularDamping = 8.0f;
 
 			Controller = new ShipController();
-			Camera = new ShipCamera();
+			CameraMode = new ShipCamera();
 
 			EnableAllCollisions = true;
 			EnableDrawing = true;

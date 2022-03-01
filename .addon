@@ -1,22 +1,13 @@
 {
-		"name": "Space Rocks",
-		"version": "1.0",
-		"sharedassets": "*.*",
-		
-		"depends": 
-		[
-			"base",
-		],
-
-		//
-		// Addons can contain multiple addons, describe them here
-		//
-		"gamemodes":
-		[
-				{
-						"name": "spacerocks",
-						"title": "Space Rocks",
-						"description": "Shitty clone of Asteroids in s&box",
-				}
-		]
+  "Title": "Space Rocks",
+  "Type": "game",
+  "Org": "brick",
+  "Ident": "spacerocks",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "ResourcePaths": null,
+  "HasCode": true,
+  "CodePath": "code",
+  "RootNamespace": "Sandbox"
 }
