@@ -1,51 +1,34 @@
-﻿using Sandbox;
-using System.Threading;
-using System.Threading.Tasks;
+﻿namespace SpaceRocks;
 
-namespace SpaceRocks
+public partial class GameMgr
 {
-	public partial class Game
+	bool isPlaying = false;
+
+	async Task PlayMusic()
 	{
-		static readonly SoundEvent Beat1 = new( "sounds/beat1.vsnd" )
+		if ( isPlaying )
+			return;
+
+		isPlaying = true;
+
+		float musicTime = 1.0f;
+
+		while ( isPlaying )
 		{
-			Volume = 0.9f,
-			DistanceMax = 5000.0f
-		};
+			await Task.DelaySeconds( musicTime );
 
-		static readonly SoundEvent Beat2 = new( "sounds/beat2.vsnd" )
-		{
-			Volume = 0.9f,
-			DistanceMax = 5000.0f
-		};
+			Sound.FromScreen( "sounds/beat1.sound" );
 
-		bool isPlaying = false;
+			await Task.DelaySeconds( musicTime );
 
-		async Task PlayMusic()
-		{
-			if ( isPlaying )
-				return;
+			Sound.FromScreen( "sounds/beat2.sound" );
 
-			isPlaying = true;
-
-			float musicTime = 1.0f;
-
-			while ( isPlaying )
-			{
-				await Task.DelaySeconds( musicTime );
-
-				PlaySound( Beat1.Name );
-
-				await Task.DelaySeconds( musicTime );
-
-				PlaySound( Beat2.Name );
-
-				musicTime -= 0.01f;
-				musicTime = MathX.Clamp(musicTime, 0.2f, 1.0f);
-			}
+			musicTime -= 0.01f;
+			musicTime = MathX.Clamp(musicTime, 0.2f, 1.0f);
 		}
-		void StopMusic()
-		{
-			isPlaying = false;
-		}
+	}
+	void StopMusic()
+	{
+		isPlaying = false;
 	}
 }
