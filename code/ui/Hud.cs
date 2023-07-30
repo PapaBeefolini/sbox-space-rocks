@@ -1,31 +1,27 @@
-﻿using Sandbox.UI;
-using Sandbox.UI.Construct;
+﻿namespace SpaceRocks.UI;
 
-namespace SpaceRocks.UI
+public partial class Hud : Panel
 {
-	public partial class Hud : Panel
+	Label highScoreLabel;
+	Label scoreLabel;
+	Label livesLabel;
+
+	public Hud()
 	{
-		Label highScoreLabel;
-		Label scoreLabel;
-		Label livesLabel;
+		highScoreLabel = Add.Label( "", "text" );
+		scoreLabel = Add.Label( "", "text" );
+		livesLabel = Add.Label( "", "text" );
+	}
 
-		public Hud()
-		{
-			highScoreLabel = Add.Label( "", "text" );
-			scoreLabel = Add.Label( "", "text" );
-			livesLabel = Add.Label( "", "text" );
-		}
+	public override void Tick()
+	{
+		highScoreLabel.Style.FontColor = GameMgr.Instance.GameColor;
+		highScoreLabel.Text = "Highscore: " + GameMgr.Instance.GameHighScore;
 
-		public override void Tick()
-		{
-			highScoreLabel.Style.FontColor = Game.Instance.GameColor;
-			highScoreLabel.Text = "Highscore: " + Game.Instance.GameHighScore;
+		scoreLabel.Style.FontColor = GameMgr.Instance.GameColor;
+		scoreLabel.Text = "Score: " + GameMgr.Instance.GameScore;
 
-			scoreLabel.Style.FontColor = Game.Instance.GameColor;
-			scoreLabel.Text = "Score: " + Game.Instance.GameScore;
-
-			livesLabel.Style.FontColor = Game.Instance.GameColor;
-			livesLabel.Text = "Lives: " + Game.Instance.GameLives;
-		}
+		livesLabel.Style.FontColor = GameMgr.Instance.GameColor;
+		livesLabel.Text = "Lives: " + GameMgr.Instance.GameLives;
 	}
 }
