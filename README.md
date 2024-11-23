@@ -1,2 +1,2 @@
 # Space Rocks
-Shitty clone of Asteroids in s&amp;box
+Clone of Asteroids in s&amp;box using the old entity system.
