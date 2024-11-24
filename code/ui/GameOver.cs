@@ -1,32 +1,28 @@
-﻿using Sandbox.UI;
-using Sandbox.UI.Construct;
+﻿namespace SpaceRocks.UI;
 
-namespace SpaceRocks.UI
+public partial class GameOver : Panel
 {
-	public partial class GameOver : Panel
+	public static GameOver Current;
+
+	Label gameOverLabel;
+
+	public GameOver()
 	{
-		public static GameOver Current;
+		Current = this;
 
-		Label gameOverLabel;
+		StyleSheet.Load( "/ui/GameOver.scss" );
+		gameOverLabel = Add.Label( "", "text" );
+	}
 
-		public GameOver()
-		{
-			Current = this;
+	public void Show()
+	{
+		gameOverLabel.Style.FontColor = GameMgr.Instance.GameColor;
+		gameOverLabel.Text = "Game Over";
+		gameOverLabel.Style.Dirty();
+	}
 
-			StyleSheet.Load( "/ui/GameOver.scss" );
-			gameOverLabel = Add.Label( "", "text" );
-		}
-
-		public void Show()
-		{
-			gameOverLabel.Style.FontColor = Game.Instance.GameColor;
-			gameOverLabel.Text = "Game Over";
-			gameOverLabel.Style.Dirty();
-		}
-
-		public void Hide()
-		{
-			gameOverLabel.Text = "";
-		}
+	public void Hide()
+	{
+		gameOverLabel.Text = "";
 	}
 }
